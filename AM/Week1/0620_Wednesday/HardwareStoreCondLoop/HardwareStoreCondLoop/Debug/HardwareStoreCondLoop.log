@@ -1,0 +1,4 @@
+﻿  Store.cpp
+c:\users\student\desktop\hardwarestorecondloop\hardwarestorecondloop\store.cpp(50): warning C4018: '<': signed/unsigned mismatch
+c:\users\student\desktop\hardwarestorecondloop\hardwarestorecondloop\store.cpp(132): warning C4018: '<': signed/unsigned mismatch
+  HardwareStoreCondLoop.vcxproj -> C:\Users\student\Desktop\HardwareStoreCondLoop\Debug\HardwareStoreCondLoop.exe
