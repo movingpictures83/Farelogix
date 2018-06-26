@@ -1,0 +1,8 @@
+Today we covered three topics:
+1. Static variables and functions
+2. const variables and functionns
+3. operator overloads
+
+Please study our BioNet classes, in particular: BioNet, BioAdj, BioAdjMat and BioAdjList.
+We directly modifed these classes in lecture
+
