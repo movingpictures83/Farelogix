@@ -1,0 +1,4 @@
+﻿  ConsoleApplication2.cpp
+c:\users\student\source\repos\consoleapplication2\consoleapplication2\consoleapplication2.cpp(47): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+c:\users\student\source\repos\consoleapplication2\consoleapplication2\consoleapplication2.cpp(47): warning C4305: 'initializing': truncation from 'double' to 'float'
+  ConsoleApplication2.vcxproj -> c:\users\student\source\repos\ConsoleApplication2\Debug\ConsoleApplication2.exe
