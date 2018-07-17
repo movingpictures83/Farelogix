@@ -1,0 +1,20 @@
+﻿  MatrixApp.cpp
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(11): error C2159: more than one storage class specified
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(11): error C2512: 'Matrix<int>': no appropriate default constructor available
+  c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(11): note: see declaration of 'Matrix<int>'
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(15): error C2146: syntax error: missing ';' before identifier 'M'
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(15): error C3861: 'M': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(16): error C2146: syntax error: missing ';' before identifier 'N'
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(16): error C3861: 'N': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(22): error C3861: 'M': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(23): error C3861: 'M': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(24): error C3861: 'M': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(25): error C3861: 'M': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(30): error C3861: 'N': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(31): error C3861: 'N': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(32): error C3861: 'N': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(33): error C3861: 'N': identifier not found
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(40): error C2065: 'M': undeclared identifier
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(40): error C2065: 'N': undeclared identifier
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(46): error C2065: 'M': undeclared identifier
+c:\users\student\source\repos\matrixapp\matrixapp\matrixapp.cpp(47): error C2065: 'N': undeclared identifier
