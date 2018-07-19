@@ -2,10 +2,17 @@
 
 #include <vector>
 #include <iostream>
+#include <exception>
+#include <string>
 using std::vector;
 using std::ostream;
 using std::cout;
 using std::endl;
+using std::out_of_range;
+using std::logic_error;
+using std::to_string;
+
+#include "InvalidDimensionException.h"
 
 template<class T>
 class Matrix {
@@ -27,9 +34,15 @@ public:
 
 template<class T>
 Matrix<T>::Matrix(const int r, const int c) : rows(r), cols(c) {
-	data = new T*[r];
-	for (int i = 0; i < r; i++)
-		data[i] = new T[c];
+	try {
+		data = new T*[r];
+		for (int i = 0; i < r; i++)
+			data[i] = new T[c];
+	}
+	catch (std::bad_array_new_length e) {
+		cout << "[Matrix] Matrix(): Cannot initialize array with negative size" << endl;
+		exit(1);
+	}
 }
 
 template<class T>
@@ -54,24 +67,56 @@ Matrix<T>::~Matrix() {
 template<class T>
 T& Matrix<T>::operator()(const int i, const int j) {
 	cout << "READ/WRITE" << endl;
-	return data[i][j];
+	try {
+		if (i < 0 || j < 0 || i >= rows || j >= cols)
+			throw out_of_range("[Matrix] operator(): Index " + to_string(i) + "," + to_string(j) + " out of range.");
+		return data[i][j];
+	}
+	catch (out_of_range e) {
+		cout << e.what() << endl;
+		exit(1); // Exits the program, error code 1
+	}
 }
 
 template<class T>
 const T& Matrix<T>::operator()(const int i, const int j) const {
 	cout << "READ ONLY VERSION" << endl;
-	return data[i][j];
+
+	try {
+		if (i < 0 || j < 0)
+			throw out_of_range("[Matrix] operator(): Index " + to_string(i) + "," + to_string(j) + " out of range.");
+		else if (i >= rows || j >= cols)
+			throw logic_error("[Matrix] operator(): Index " + to_string(i) + "," + to_string(j) + " out of range.");
+		return data[i][j];
+	}
+    // From most specific to least specific
+	catch (out_of_range e) {
+		cout << e.what() << endl;
+		exit(1); // Exits the program, error code 1
+	}
+	catch (logic_error e) {
+		cout << e.what() << endl;
+		return T();
+	}
 }
 
 template<class T>
 Matrix<T> Matrix<T>::operator+(const Matrix<T>& rhs) const {
-	Matrix<T> retval(rows, cols);
+	try {
+		if (rhs.rows != rows || rhs.cols != cols)
+			throw InvalidDimensionException("Matrix", "+", rows, cols, rhs.rows, rhs.cols);
+		Matrix<T> retval(rows, cols);
 
-	for (int i = 0; i < rows; i++)
-		for (int j = 0; j < cols; j++)
-			retval.data[i][j] = data[i][j] + rhs.data[i][j];
+		for (int i = 0; i < rows; i++)
+			for (int j = 0; j < cols; j++)
+				retval.data[i][j] = data[i][j] + rhs.data[i][j];
 
-	return retval;
+		return retval;
+	}
+	catch (InvalidDimensionException e) {
+		cout << e.what() << endl;
+		exit(1);
+	}
 }
 
 template<class T>
